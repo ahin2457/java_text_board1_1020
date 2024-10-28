@@ -33,6 +33,10 @@ public class Main {
     // 객체 주소 넘기기 -> 주소에 접근해서 게시물을 추가할 수 있다.
     makeTestData(articles);
 
+    if(articles.size() > 0){
+      lastArticleLastId = articles.get(articles.size() - 1).id;
+    }
+
     // 테스트 게시물 작성 끝
 
     System.out.println("== 텍스트 게시판 v 0.1 ==");

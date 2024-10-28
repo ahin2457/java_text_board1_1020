@@ -112,9 +112,17 @@ public class Main {
          - 병렬 처리가 쉽다: 멀티쓰레드 사용
          - 기본 스트림을 제공한다:Stream<Ineger> 대신 IntStream이 제공되어서 오토박싱과 언박싱 등의 불필요한 과정이 생략되고 숫자의 경우 유용한 메소드를 추가로 제공한다.
          */
+        System.out.println("번호 | 제목");
+        /*
         articles.stream()
             .forEach(article -> System.out.printf(" %d | %s\n ", article.id, article.subject)
-            );
+            );s
+         */
+        for(int i = articles.size()-1; i >= 0; i--){
+          Article article = articles.get(i);
+          System.out.printf(" %d | %s\n ", article.id, article.subject);
+        }
+
       }
       else if(cmd.equals("/usr/article/detail") ){
         Article article = lastArticle; // 주소값의 연결

@@ -11,6 +11,13 @@ Todo List
 
  */
 public class Main {
+
+ static void makeTestData(List<Article>articles){
+    // 테스트 게시물 작성 시작
+    articles.add(new Article(1,"제목1","내용1"));
+    articles.add(new Article(2,"제목2","내용2"));
+    articles.add(new Article(3,"제목3","내용3"));
+  }
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     // while문 바깥의 변수는 while문 입장에서 전역변수
@@ -23,10 +30,9 @@ public class Main {
     // 앞에 Article이 있으면 뒤에 Article 생략 가능
     List<Article> articles = new ArrayList<>();
 
-    // 테스트 게시물 작성 시작
-    articles.add(new Article(1,"제목1","내용1"));
-    articles.add(new Article(2,"제목2","내용2"));
-    articles.add(new Article(3,"제목3","내용3"));
+    // 객체 주소 넘기기 -> 주소에 접근해서 게시물을 추가할 수 있다.
+    makeTestData(articles);
+
     // 테스트 게시물 작성 끝
 
     System.out.println("== 텍스트 게시판 v 0.1 ==");

@@ -71,6 +71,8 @@ public class Main {
         // 입력 받고난 게시물의 객체 주소를 lastArticle에 넣어줌
         lastArticle = article;
 
+        articles.add(article);
+
         // article(주소값)을 articles(list저장 객체)에 넣어준다.
         articles.add(article);
 
@@ -152,7 +154,6 @@ public class Main {
       System.out.printf("입력받은 명령어: %s\n",cmd);
 
     }
-
 
     //sc.close();
 

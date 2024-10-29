@@ -22,7 +22,6 @@ public class Main {
     Scanner sc = new Scanner(System.in);
     // while문 바깥의 변수는 while문 입장에서 전역변수
     int lastArticleLastId = 0;
-    Article lastArticle = null;
 
     // 여러게의 게시물 담기
     // ArrayList<Article> articles = new ArrayList<Article>();
@@ -69,7 +68,6 @@ public class Main {
         // Article 객체의 주소가 출력
         Article article = new Article(id ,subject ,content);
         // 입력 받고난 게시물의 객체 주소를 lastArticle에 넣어줌
-        lastArticle = article;
 
         articles.add(article);
 
@@ -131,17 +129,16 @@ public class Main {
 
       }
       else if(cmd.equals("/usr/article/detail") ){
-        Article article = lastArticle; // 주소값의 연결
-
-        if(article == null){
+        if(articles.isEmpty()) {
           System.out.println("게시물이 존재하지 않습니다.");
           continue; //밑에 코드 스킵
         }
+        Article article = articles.get(articles.size() - 1); // 마지막 데이터
 
         System.out.println("== 게시물 상세보기 ==");
         System.out.printf("번호 : %d\n", article.id);
-        System.out.printf("제목 : %d\n", article.subject);
-        System.out.printf("내용 : %d\n", article.content);
+        System.out.printf("제목 : %s\n", article.subject);
+        System.out.printf("내용 : %s\n", article.content);
         //break; // 반복문 빠져나오기
       }
       else if(cmd.equals("exit")){
